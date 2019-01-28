@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ferramentas index{% endblock %}
+
+{% block body %}
+    <h1>Ferramentas index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cod_ferramenta</th>
+                <th>Nome_ferramenta</th>
+                <th>Marca_ferramenta</th>
+                <th>Aluguel_hora</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ferramenta in ferramentas %}
+            <tr>
+                <td>{{ ferramenta.id }}</td>
+                <td>{{ ferramenta.codFerramenta }}</td>
+                <td>{{ ferramenta.nomeFerramenta }}</td>
+                <td>{{ ferramenta.marcaFerramenta }}</td>
+                <td>{{ ferramenta.aluguelHora }}</td>
+                <td>
+                    <a href="{{ path('ferramentas_show', {'id': ferramenta.id}) }}">show</a>
+                    <a href="{{ path('ferramentas_edit', {'id': ferramenta.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ferramentas_new') }}">Create new</a>
+{% endblock %}

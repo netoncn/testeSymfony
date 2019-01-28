@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Servicos{% endblock %}
+
+{% block body %}
+    <h1>Edit Servicos</h1>
+
+    {{ include('servicos/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('servicos_index') }}">back to list</a>
+
+    {{ include('servicos/_delete_form.html.twig') }}
+{% endblock %}

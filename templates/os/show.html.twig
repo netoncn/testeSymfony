@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Os{% endblock %}
+
+{% block body %}
+    <h1>Os</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ o.id }}</td>
+            </tr>
+            <tr>
+                <th>Sequence</th>
+                <td>{{ o.Sequence }}</td>
+            </tr>
+            <tr>
+                <th>Desconto</th>
+                <td>{{ o.desconto }}</td>
+            </tr>
+            <tr>
+                <th>Valor_total</th>
+                <td>{{ o.valorTotal }}</td>
+            </tr>
+            <tr>
+                <th>Data_servico</th>
+                <td>{{ o.dataServico ? o.dataServico|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('os_index') }}">back to list</a>
+
+    <a href="{{ path('os_edit', {'id': o.id}) }}">edit</a>
+
+    {{ include('os/_delete_form.html.twig') }}
+{% endblock %}

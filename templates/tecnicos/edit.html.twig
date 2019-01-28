@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Tecnicos{% endblock %}
+
+{% block body %}
+    <h1>Edit Tecnicos</h1>
+
+    {{ include('tecnicos/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('tecnicos_index') }}">back to list</a>
+
+    {{ include('tecnicos/_delete_form.html.twig') }}
+{% endblock %}

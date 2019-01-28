@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tecnicos{% endblock %}
+
+{% block body %}
+    <h1>Create new Tecnicos</h1>
+
+    {{ include('tecnicos/_form.html.twig') }}
+
+    <a href="{{ path('tecnicos_index') }}">back to list</a>
+
+    {% if erro %}
+        <br><h4>{{erro}}</h4>
+    {% endif %}
+{% endblock %}

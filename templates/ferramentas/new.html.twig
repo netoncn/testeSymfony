@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ferramentas{% endblock %}
+
+{% block body %}
+    <h1>Create new Ferramentas</h1>
+
+    {{ include('ferramentas/_form.html.twig') }}
+
+    <a href="{{ path('ferramentas_index') }}">back to list</a>
+{% endblock %}
